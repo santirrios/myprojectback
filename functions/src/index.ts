@@ -75,7 +75,8 @@ app.put("/",async(req,res)=>{
         const document=db.collection('productos').doc('/'+data.id+'/');
         await document.update({
         nombre:data.nombre,
-        cantidad:data.cantidad
+        cantidad:data.cantidad,
+        precio:data.precio
         });
         return res.status(204).json()
     }catch(err){
